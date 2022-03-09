@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2022/02/08 22:12:21.000.653,=C:\Users\Daniela\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/03/03 22:06:32.000.623,=C:\Users\Daniela\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/03/03 22:10:55.000.518,C:\Users\Daniela\Documents\Embarcadero\Studio\Projects\Unit1.fmx=C:\Users\Daniela\Documents\Apostila\Delphi\Mobile\UnitLogin.fmx</Transaction>
+    <Transaction>2022/03/03 22:10:55.000.518,C:\Users\Daniela\Documents\Embarcadero\Studio\Projects\Unit1.pas=C:\Users\Daniela\Documents\Apostila\Delphi\Mobile\UnitLogin.pas</Transaction>
+    <Transaction>2022/03/03 22:11:15.000.101,C:\Users\Daniela\Documents\Embarcadero\Studio\Projects\Project1.dproj=C:\Users\Daniela\Documents\Apostila\Delphi\Mobile\RioLivre.dproj</Transaction>
+    <Transaction>2022/03/05 12:25:59.000.929,=C:\Users\Daniela\Documents\Apostila\Delphi\Mobile\Unit1.pas</Transaction>
+    <Transaction>2022/03/05 12:27:14.000.400,C:\Users\Daniela\Documents\Apostila\Delphi\Mobile\UnitPrincipal.fmx=C:\Users\Daniela\Documents\Apostila\Delphi\Mobile\Unit1.fmx</Transaction>
+    <Transaction>2022/03/05 12:27:14.000.400,C:\Users\Daniela\Documents\Apostila\Delphi\Mobile\UnitPrincipal.pas=C:\Users\Daniela\Documents\Apostila\Delphi\Mobile\Unit1.pas</Transaction>
+  </Transactions>
+	<ActiveMobileDevice>
+		<NoProfile Android="119e298" Android64="119e298"/>
+	</ActiveMobileDevice>
+</BorlandProject>
