@@ -31,6 +31,8 @@ type
     imgOil: TImage;
     imgHour: TImage;
     procedure FormShow(Sender: TObject);
+    procedure LVRioLivreItemClick(const Sender: TObject;
+      const AItem: TListViewItem);
   private
     procedure AddPontoColetaLv(id_postocoleta: integer; nome, endereco,
                              hr_func: string; qtd_oil: string);
@@ -46,6 +48,8 @@ var
 implementation
 
 {$R *.fmx}
+
+uses UnitColetor;
 //Código para Alimentação da List View com dados dos Postos de Coleta
 procedure TFrmPrincipal.AddPontoColetaLv( id_postocoleta: integer;
                                            nome, endereco, hr_func: string;
@@ -58,7 +62,8 @@ begin
      // Inserir o item e trabalhar com ele abaixo
      with LVRioLivre.Items.Add do
      begin
-         Height:= 130;
+         Height:= 115;
+         Tag:= id_postocoleta;
 
          img:= TListItemImage(Objects.FindDrawable('imgLocation'));
          img.Bitmap:= imgLocation.Bitmap;
@@ -89,6 +94,15 @@ begin
       AddPontoColetaLv(1, 'Supermercado Dois Irmãos', 'Rua ABC, 1200','Seg a Sex', '2');
       AddPontoColetaLv(1, 'Supermercado Dois Irmãos', 'Rua ABC, 1200','Seg a Sex', '2');
       AddPontoColetaLv(1, 'Supermercado Dois Irmãos', 'Rua ABC, 1200','Seg a Sex', '2');
+end;
+
+procedure TFrmPrincipal.LVRioLivreItemClick(const Sender: TObject;
+  const AItem: TListViewItem);
+begin
+    if NOT Assigned(FrmColetor) then
+        Application.CreateForm(TFrmColetor, FrmColetor);
+
+    FrmColetor.Show;
 end;
 
 procedure TFrmPrincipal.FormShow(Sender: TObject);
