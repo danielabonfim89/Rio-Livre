@@ -14,8 +14,8 @@ uses
 begin
   Application.Initialize;
   Application.CreateForm(TFrmPrincipal, FrmPrincipal);
-  Application.CreateForm(TFrmSplash, FrmSplash);
   Application.CreateForm(TFormLogin, FormLogin);
+  Application.CreateForm(TFrmSplash, FrmSplash);
   Application.CreateForm(TFrmColetor, FrmColetor);
   Application.Run;
 end.

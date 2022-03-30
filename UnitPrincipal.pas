@@ -7,7 +7,7 @@ uses
   FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, FMX.Objects,
   FMX.Layouts, FMX.Controls.Presentation, FMX.StdCtrls, FMX.Edit,
   FMX.ListView.Types, FMX.ListView.Appearances, FMX.ListView.Adapters.Base,
-  FMX.ListView;
+  FMX.ListView, FMX.Ani;
 
 type
   TFrmPrincipal = class(TForm)
@@ -24,19 +24,22 @@ type
     lytOptions: TLayout;
     RectBase: TRectangle;
     RectOptions: TRectangle;
-    Label2: TLabel;
-    Label3: TLabel;
+    lblCasa: TLabel;
+    lblPosto: TLabel;
     LVRioLivre: TListView;
     imgLocation: TImage;
     imgOil: TImage;
     imgHour: TImage;
+    AnimationFiltro: TFloatAnimation;
     procedure FormShow(Sender: TObject);
     procedure LVRioLivreItemClick(const Sender: TObject;
       const AItem: TListViewItem);
+    procedure lblCasaClick(Sender: TObject);
   private
     procedure AddPontoColetaLv(id_postocoleta: integer; nome, endereco,
                              hr_func: string; qtd_oil: string);
     procedure ListarPontoColeta;
+    procedure SelecionarColeta(lbl: TLabel);
     { Private declarations }
   public
     { Public declarations }
@@ -108,6 +111,23 @@ end;
 procedure TFrmPrincipal.FormShow(Sender: TObject);
 begin
       ListarPontoColeta;
+end;
+      //Receber a Label clicada como parametro
+procedure TFrmPrincipal.SelecionarColeta(lbl: TLabel);
+begin
+    lblCasa.FontColor:= $FF8F8F8F;
+    lblPosto.FontColor:= $FF8F8F8F;
+
+    lbl.FontColor:= $FFFFFFFF;
+
+    //Aqui definimos o eixo x como o final da animação
+    AnimationFiltro.StopValue:= lbl.Position.x;
+    AnimationFiltro.Start;
+end;
+
+procedure TFrmPrincipal.lblCasaClick(Sender: TObject);
+begin
+    SelecionarColeta(TLabel(Sender));
 end;
 
 end.
