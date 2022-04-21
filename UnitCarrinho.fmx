@@ -1,7 +1,7 @@
 object FrmCarrinho: TFrmCarrinho
   Left = 0
   Top = 0
-  Caption = 'Form1'
+  Caption = 'Carrinho de Agendamento'
   ClientHeight = 480
   ClientWidth = 358
   Fill.Kind = Solid
@@ -9,6 +9,7 @@ object FrmCarrinho: TFrmCarrinho
   FormFactor.Width = 320
   FormFactor.Height = 480
   FormFactor.Devices = [Desktop]
+  OnShow = FormShow
   DesignerMasterStyle = 0
   object LytToolbar: TLayout
     Align = Top
@@ -204,7 +205,7 @@ object FrmCarrinho: TFrmCarrinho
         TextSettings.Font.Size = 14.000000000000000000
         TextSettings.FontColor = xFF3A3A3A
         TextSettings.HorzAlign = Trailing
-        Text = 'Quantidade: 5'
+        Text = 'Litros: 20,5'
         TabOrder = 0
       end
     end

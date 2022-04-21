@@ -13,7 +13,7 @@ type
   TFrmPrincipal = class(TForm)
     LytToolbar: TLayout;
     Image1: TImage;
-    Image2: TImage;
+    imgCarrinho: TImage;
     Label1: TLabel;
     LytSearch: TLayout;
     StyleBook: TStyleBook;
@@ -35,6 +35,7 @@ type
     procedure LVRioLivreItemClick(const Sender: TObject;
       const AItem: TListViewItem);
     procedure lblCasaClick(Sender: TObject);
+    procedure imgCarrinhoClick(Sender: TObject);
   private
     procedure AddPontoColetaLv(id_postocoleta: integer; nome, endereco,
                              hr_func: string; qtd_oil: string);
@@ -52,7 +53,7 @@ implementation
 
 {$R *.fmx}
 
-uses UnitColetor;
+uses UnitColetor, UnitCarrinho;
 //Código para Alimentação da List View com dados dos Postos de Coleta
 procedure TFrmPrincipal.AddPontoColetaLv( id_postocoleta: integer;
                                            nome, endereco, hr_func: string;
@@ -112,7 +113,15 @@ procedure TFrmPrincipal.FormShow(Sender: TObject);
 begin
       ListarPontoColeta;
 end;
-      //Receber a Label clicada como parametro
+      procedure TFrmPrincipal.imgCarrinhoClick(Sender: TObject);
+begin
+     if NOT Assigned(FrmCarrinho) then
+          Application.CreateForm(TFrmCarrinho, FrmCarrinho);
+
+     FrmCarrinho.Show;
+end;
+
+//Receber a Label clicada como parametro
 procedure TFrmPrincipal.SelecionarColeta(lbl: TLabel);
 begin
     lblCasa.FontColor:= $FF8F8F8F;

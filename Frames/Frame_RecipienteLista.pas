@@ -11,9 +11,9 @@ type
   TFrameRecipienteLista = class(TFrame)
     imgFoto: TImage;
     lblNomeRecipiente: TLabel;
-    lblValor: TLabel;
+    lblLitro: TLabel;
     Layout1: TLayout;
-    lblQtde: TLabel;
+    lblQtdeUnit: TLabel;
   private
     { Private declarations }
   public

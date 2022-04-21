@@ -99,7 +99,7 @@ object FrameRecipienteLista: TFrameRecipienteLista
     Size.Height = 66.000000000000000000
     Size.PlatformDefault = False
   end
-  object lblValor: TLabel
+  object lblLitro: TLabel
     Align = Right
     StyledSettings = [Family, Style]
     Margins.Top = 15.000000000000000000
@@ -138,7 +138,7 @@ object FrameRecipienteLista: TFrameRecipienteLista
       Text = 'Garrafa Pet'
       TabOrder = 2
     end
-    object lblQtde: TLabel
+    object lblQtdeUnit: TLabel
       Align = Top
       StyledSettings = [Family, Style]
       Margins.Left = 5.000000000000000000
