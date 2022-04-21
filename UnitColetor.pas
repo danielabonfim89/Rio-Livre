@@ -38,6 +38,8 @@ type
     procedure FormShow(Sender: TObject);
     procedure LbCategoriaItemClick(const Sender: TCustomListBox;
       const Item: TListBoxItem);
+    procedure LbRecipientesItemClick(const Sender: TCustomListBox;
+      const Item: TListBoxItem);
   private
     procedure AddRecipiente(id_recipiente: integer; descricao,
       quantidade: string);
@@ -57,7 +59,7 @@ implementation
 
 {$R *.fmx}
 
-uses UnitPrincipal, Frame_RecipienteCard;
+uses UnitPrincipal, Frame_RecipienteCard, UnitRecipiente;
 
 procedure TFrmColetor.AddRecipiente(id_recipiente: integer;
                                     descricao, quantidade: string);
@@ -197,6 +199,14 @@ procedure TFrmColetor.LbCategoriaItemClick(const Sender: TCustomListBox;
   const Item: TListBoxItem);
 begin
     SelecionarCategoria(Item);
+end;
+
+procedure TFrmColetor.LbRecipientesItemClick(const Sender: TCustomListBox;
+  const Item: TListBoxItem);
+begin
+   if NOT Assigned(FrmRecipiente)then
+        Application.CreateForm(TFrmRecipiente, FrmRecipiente);
+   FrmRecipiente.Show;
 end;
 
 procedure TFrmColetor.ListarCategorias;

@@ -7,15 +7,20 @@ uses
   UnitPrincipal in 'UnitPrincipal.pas' {FrmPrincipal},
   UnitColetor in 'UnitColetor.pas' {FrmColetor},
   Frame_RecipienteCard in 'Frames\Frame_RecipienteCard.pas' {FrameRecipienteCard: TFrame},
-  UnitSplash in 'UnitSplash.pas' {FrmSplash};
+  UnitSplash in 'UnitSplash.pas' {FrmSplash},
+  UnitRecipiente in 'UnitRecipiente.pas' {FrmRecipiente},
+  UnitCarrinho in 'UnitCarrinho.pas' {FrmCarrinho},
+  Frame_RecipienteLista in 'Frames\Frame_RecipienteLista.pas' {FrameRecipienteLista: TFrame};
 
 {$R *.res}
 
 begin
   Application.Initialize;
   Application.CreateForm(TFrmPrincipal, FrmPrincipal);
+  Application.CreateForm(TFrmColetor, FrmColetor);
+  Application.CreateForm(TFrmRecipiente, FrmRecipiente);
   Application.CreateForm(TFormLogin, FormLogin);
   Application.CreateForm(TFrmSplash, FrmSplash);
-  Application.CreateForm(TFrmColetor, FrmColetor);
+  Application.CreateForm(TFrmCarrinho, FrmCarrinho);
   Application.Run;
 end.
