@@ -11,7 +11,7 @@ type
   TFrmCarrinho = class(TForm)
     LytToolbar: TLayout;
     LblTitle: TLabel;
-    ImgBack: TImage;
+    ImgFecharMenu: TImage;
     LytEndereco: TLayout;
     LblEndereco: TLabel;
     Label1: TLabel;

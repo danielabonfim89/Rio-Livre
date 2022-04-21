@@ -28,7 +28,7 @@ object FrmCarrinho: TFrmCarrinho
       Text = 'Carrinho de Agendamento'
       TabOrder = 0
     end
-    object ImgBack: TImage
+    object ImgFecharMenu: TImage
       MultiResBitmap.Height = 256
       MultiResBitmap.Width = 256
       MultiResBitmap = <

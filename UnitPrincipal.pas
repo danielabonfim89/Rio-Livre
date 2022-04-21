@@ -12,7 +12,7 @@ uses
 type
   TFrmPrincipal = class(TForm)
     LytToolbar: TLayout;
-    Image1: TImage;
+    imgMenu: TImage;
     imgCarrinho: TImage;
     Label1: TLabel;
     LytSearch: TLayout;
@@ -31,16 +31,35 @@ type
     imgOil: TImage;
     imgHour: TImage;
     AnimationFiltro: TFloatAnimation;
+    rectMenu: TRectangle;
+    Image2: TImage;
+    ImgFecharMenu: TImage;
+    Label2: TLabel;
+    Label3: TLabel;
+    rectMenuAgend: TRectangle;
+    Label4: TLabel;
+    Rectangle2: TRectangle;
+    Label5: TLabel;
+    Rectangle3: TRectangle;
+    Label6: TLabel;
+    rectRodape: TRectangle;
+    Layout2: TLayout;
+    Label7: TLabel;
+    Image1: TImage;
     procedure FormShow(Sender: TObject);
     procedure LVRioLivreItemClick(const Sender: TObject;
       const AItem: TListViewItem);
     procedure lblCasaClick(Sender: TObject);
     procedure imgCarrinhoClick(Sender: TObject);
+    procedure imgMenuClick(Sender: TObject);
+    procedure ImgFecharMenuClick(Sender: TObject);
+    procedure rectMenuAgendClick(Sender: TObject);
   private
     procedure AddPontoColetaLv(id_postocoleta: integer; nome, endereco,
                              hr_func: string; qtd_oil: string);
     procedure ListarPontoColeta;
     procedure SelecionarColeta(lbl: TLabel);
+    procedure OpenMenu(ind: boolean);
     { Private declarations }
   public
     { Public declarations }
@@ -53,7 +72,7 @@ implementation
 
 {$R *.fmx}
 
-uses UnitColetor, UnitCarrinho;
+uses UnitColetor, UnitCarrinho, UnitAgendamento;
 //Código para Alimentação da List View com dados dos Postos de Coleta
 procedure TFrmPrincipal.AddPontoColetaLv( id_postocoleta: integer;
                                            nome, endereco, hr_func: string;
@@ -119,6 +138,30 @@ begin
           Application.CreateForm(TFrmCarrinho, FrmCarrinho);
 
      FrmCarrinho.Show;
+end;
+
+procedure TFrmPrincipal.ImgFecharMenuClick(Sender: TObject);
+begin
+  OpenMenu(false);
+end;
+
+procedure TFrmPrincipal.OpenMenu(ind: boolean);
+begin
+  rectMenu.Visible:= ind;
+end;
+
+procedure TFrmPrincipal.rectMenuAgendClick(Sender: TObject);
+begin
+   if NOT Assigned(FrmAgendamento) then
+   application.CreateForm(TFrmAgendamento, FrmAgendamento);
+
+   OpenMenu(false);
+   FrmAgendamento.Show;
+end;
+
+procedure TFrmPrincipal.imgMenuClick(Sender: TObject);
+begin
+    OpenMenu(true);
 end;
 
 //Receber a Label clicada como parametro

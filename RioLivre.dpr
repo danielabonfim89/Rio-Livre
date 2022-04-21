@@ -10,7 +10,9 @@ uses
   UnitSplash in 'UnitSplash.pas' {FrmSplash},
   UnitRecipiente in 'UnitRecipiente.pas' {FrmRecipiente},
   UnitCarrinho in 'UnitCarrinho.pas' {FrmCarrinho},
-  Frame_RecipienteLista in 'Frames\Frame_RecipienteLista.pas' {FrameRecipienteLista: TFrame};
+  Frame_RecipienteLista in 'Frames\Frame_RecipienteLista.pas' {FrameRecipienteLista: TFrame},
+  UnitAgendamento in 'UnitAgendamento.pas' {FrmAgendamento},
+  UnitAgendamentoDetalhe in 'UnitAgendamentoDetalhe.pas' {FrmAgendamentoDetalhe};
 
 {$R *.res}
 
@@ -22,5 +24,7 @@ begin
   Application.CreateForm(TFormLogin, FormLogin);
   Application.CreateForm(TFrmSplash, FrmSplash);
   Application.CreateForm(TFrmCarrinho, FrmCarrinho);
+  Application.CreateForm(TFrmAgendamento, FrmAgendamento);
+  Application.CreateForm(TFrmAgendamentoDetalhe, FrmAgendamentoDetalhe);
   Application.Run;
 end.
